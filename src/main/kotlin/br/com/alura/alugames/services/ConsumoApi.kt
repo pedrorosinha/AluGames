@@ -30,6 +30,8 @@ class ConsumoApi {
         val json = getJsonFromUrl(endereco)
         val gson = Gson()
         val meuGamerTipo = object : TypeToken<List<InfoGameJson>>() {}.type
-        return gson.fromJson(json, meuGamerTipo)
+        val listaGamers: List<InfoGameJson> = gson.fromJson(json, meuGamerTipo)
+
+        return listaGamers
     }
 }
