@@ -12,6 +12,6 @@ data class Jogo(
     }
 
     override fun toString(): String {
-        return "Meu Jogo: \n" + "Título: $titulo \n" + "Capa: $capa \n" + "Descricao: $descricao" + "Preço: $preco"
+        return "Meu Jogo: \n" + "Título: $titulo \n" + "Capa: $capa \n" + "Descricao: $descricao \n" + "Preço: $preco"
     }
 }

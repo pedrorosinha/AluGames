@@ -44,8 +44,8 @@ data class Gamer(var nome: String, var email: String) {
         else throw IllegalArgumentException("Email invalido")
     }
 
-    fun alugarJogo(jogo: Jogo): Aluguel {
-        return Aluguel(this, jogo)
+    fun alugarJogo(jogo: Jogo, periodo: Periodo): Aluguel {
+        return Aluguel(this, jogo, periodo)
     }
 
     companion object {
