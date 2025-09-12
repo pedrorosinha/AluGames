@@ -21,10 +21,10 @@ data class Gamer(var nome: String, var email: String) {
         criarIdInterno()
     }
 
-//    init {
-//        if (nome.isBlank()) throw IllegalArgumentException("Nome está em branco")
-//        this.email = validarEmail()
-//    }
+    init {
+        if (nome.isBlank()) throw IllegalArgumentException("Nome está em branco")
+        this.email = validarEmail()
+    }
 
     override fun toString(): String {
         return "Gamer(nome='$nome', email='$email', dataNascimento=$dataNascimento, usuario=$usuario, idInterno=$idInterno)"
@@ -42,6 +42,10 @@ data class Gamer(var nome: String, var email: String) {
             Regex("[a-z0-9!#\$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#\$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
         if (regex.matches(email)) return email
         else throw IllegalArgumentException("Email invalido")
+    }
+
+    fun alugarJogo(jogo: Jogo): Aluguel {
+        return Aluguel(this, jogo)
     }
 
     companion object {
