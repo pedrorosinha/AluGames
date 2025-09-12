@@ -1,5 +1,6 @@
 package br.com.alura.alugames.model
 
+import br.com.alura.alugames.enums.TipoPlano
 import java.util.*
 import kotlin.random.Random
 
@@ -12,6 +13,8 @@ data class Gamer(var nome: String, var email: String) {
         }
     var idInterno: String? = null
         private set
+
+    var plano: PlanoAvulso = PlanoAvulso(TipoPlano.BRONZE)
 
     val jogosBuscados = mutableListOf<Jogo?>()
     val jogosAlugados = mutableListOf<Aluguel>()
