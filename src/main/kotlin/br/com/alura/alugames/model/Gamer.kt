@@ -24,7 +24,9 @@ data class Gamer(var nome: String, var email: String) : Recomendavel {
         get() = listaNotas.average()
 
     override fun recomendar(nota: Int) {
-        listaNotas.add(nota)
+        if (nota !in 0..10) throw IllegalArgumentException("Nota deve estar entre 0 e 10") else listaNotas.add(
+            nota
+        )
     }
 
     constructor(nome: String, email: String, dataNascimento: String, usuario: String) : this(nome, email) {
