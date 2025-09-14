@@ -55,10 +55,9 @@ data class Gamer(var nome: String, var email: String) {
         return aluguel
     }
 
-    fun jogosDoMes(mes:Int): List<Jogo> {
-        return jogosAlugados
-            .filter { aluguel ->  aluguel.periodo.dataInicial.monthValue == mes}
-            .map { aluguel ->  aluguel.jogo}
+    fun jogosDoMes(mes: Int): List<Jogo> {
+        return jogosAlugados.filter { aluguel -> aluguel.periodo.dataInicial.monthValue == mes }
+            .map { aluguel -> aluguel.jogo }
     }
 
     companion object {
